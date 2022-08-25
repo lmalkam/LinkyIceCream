@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wtrfvk#42w*=kk+t&kp+3)p8-932dh)*oe82n#&yirjgw$xq2z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000','icecreamlinky.herokuapp.com']
+ALLOWED_HOSTS = []
+
+# '127.0.0.1:8000','icecreamlinky.herokuapp.com'
 
 
 # Application definition
@@ -42,7 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+   # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,7 +133,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # added manually
 
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/var/www/static/',
+]
+# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
