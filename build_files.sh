@@ -1,13 +1,4 @@
-{
-    "builds": [{
-        "src": "vercel_app/wsgi.py",
-        "use": "@ardnt/vercel-python-wsgi",
-        "config": { "maxLambdaSize": "15mb" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "vercel_app/wsgi.py"
-        }
-    ]
-}
+echo "BUILD START"
+python3.6 -m pip install -r requirements.txt
+python3.6 manage.py collectstatic --noinput --clear
+echo "BUILD ENDS"

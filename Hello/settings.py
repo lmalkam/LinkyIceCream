@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wtrfvk#42w*=kk+t&kp+3)p8-932dh)*oe82n#&yirjgw$xq2z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','now.sh']
 
 # '127.0.0.1:8000','icecreamlinky.herokuapp.com'
 
