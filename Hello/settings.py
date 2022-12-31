@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-wtrfvk#42w*=kk+t&kp+3)p8-932dh)*oe82n#&yirjgw$xq2z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','now.sh']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','.now.sh']
 
 # '127.0.0.1:8000','icecreamlinky.herokuapp.com'
 
@@ -131,13 +131,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # added manually
+import os
 
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
-# STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
-]
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#    '/var/www/static/',
+#]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
